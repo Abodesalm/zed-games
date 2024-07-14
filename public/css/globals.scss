@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './helpers/mixins';
+
+
+// Variables :
+$dark:#212121;
+$darker:#181818;
+$light:#eeffe9;
+$backLight:#dae1d8;
+$accent:#6ee154;
+$accentt:#5fbe49;
+$accenttt:#4f9a3f;
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    direction: ltr !important;
+    scroll-behavior: smooth;
+}
+
+::selection{
+    background-color: $accent;
+    color:$dark;
+}
+
+.pad{
+    padding: 2rem 10rem;
+    @include xl{padding: 2rem 6rem;}
+    @include lg{padding: 1.5rem 4rem;}
+    @include md{padding: 1.5rem 4rem;}
+    @include sm{padding: 1rem 1rem;}
+}
+
+.scrollTop{
+    width:40px;
+    height:40px;
+    z-index:10;
+    background-color:$accent;
+    position:fixed;
+    cursor:pointer;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    bottom:-50px;
+    right:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -ms-transition:0.5s ease;
+    -o-transition:0.5s ease;
+}
+.scrollTop.show{bottom:15px;@include md{bottom:20px;}}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent $accent $accent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+#req td, #req th{
+    padding: 0.5rem;
+    border: 1px solid $accenttt;
+}
+
+.green{color:rgb(34 197 94)}
+.cyan{color:rgb(6 182 212)}
+.yellow{color:rgb(234 179 8)}
+.orange{color:rgb(249 115 22)}
+.red{color:rgb(239 68 68)}
+
+
+
+@media screen and (max-width:720px){.nav-links{display: none}.nav-ss{display: flex} .rot{
+    transform: rotate(312deg);
+    -webkit-transform: rotate(312deg);
+    -moz-transform: rotate(312deg);
+    -ms-transform: rotate(312deg);
+    -o-transform: rotate(312deg);
+}}
+@media screen and (max-width:500px){nav{padding:1rem}.login{display: none}.nav-logo img{width:110px}}

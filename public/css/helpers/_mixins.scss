@@ -1,0 +1,24 @@
+
+
+
+// mixins :
+@mixin sm{
+    @media screen and (max-width:500px) {
+        @content
+    }
+};
+@mixin md{
+    @media screen and (max-width:720px) {
+        @content
+    }
+};
+@mixin lg{
+    @media screen and (max-width:1024px) {
+        @content
+    }
+};
+@mixin xl{
+    @media screen and (max-width:1300px) {
+        @content
+    }
+};
