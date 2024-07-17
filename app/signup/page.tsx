@@ -19,11 +19,11 @@ export default function Signup() {
   
   const submit = (e) =>{
     e.preventDefault()
-    fetch(`${api}/users/signup`,{
+    /* fetch(`${api}/users/signup`,{
       method:"POST",
       body:JSON.stringify(data),
       mode:"no-cors"
-    }).then(res=>res.json()).catch(err=>console.error(err))
+    }).then(res=>res.json()).catch(err=>console.error(err)) */
     //axios.post(`${api}/users/signup`, data)
   }
 

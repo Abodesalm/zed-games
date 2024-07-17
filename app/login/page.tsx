@@ -14,10 +14,10 @@ export default function Login() {
 
   const submit = (e) =>{
     e.preventDefault()
-    fetch(`${api}/login`,{
+    /* fetch(`${api}/login`,{
       method:"POST",
       body:JSON.stringify(data)
-    }).then(res=>res.json()).catch(err=>console.log(err))
+    }).then(res=>res.json()).catch(err=>console.log(err)) */
     //axios.post(`${api}/signup`, data)
   }
 

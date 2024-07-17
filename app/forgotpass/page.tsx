@@ -12,10 +12,10 @@ export default function Forgot() {
 
   const submit = (e) =>{
     e.preventDefault()
-    fetch(`${api}/users/forgotPassword`,{
+    /* fetch(`${api}/users/forgotPassword`,{
       method:"POST",
       body:JSON.stringify(data)
-    }).then(res=>res.json()).catch(err=>console.log(err))
+    }).then(res=>res.json()).catch(err=>console.log(err)) */
     //axios.post(`${api}/signup`, data)
   }
 

@@ -9,7 +9,7 @@ import axios from "axios";
 export default async function Game({params}) {
 
   const endPoint = `${api}/games/${params.gameId}`;
-  const game = await axios.get(endPoint).then(res => res.data.data.data)
+  const game = await fetch(endPoint).then(res => res.json()).then(data=>data.data.data)
   const req = game.requirements;
   const rates = game.rates;
 
