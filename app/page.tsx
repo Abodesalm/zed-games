@@ -6,7 +6,7 @@ export default function Home({searchParams}) {
   return (
     <div className="min-h-[70vh]">
       <Search/>
-      <Container endpoint={`${api}/games`} searchParams={searchParams} pageUrl={'/'}/>
+      <Container endpoint={`${api}/games`} searchParams={searchParams} pageUrl={'/'} method='?'/>
     </div>
   );
 }

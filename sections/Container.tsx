@@ -5,10 +5,10 @@ import { api } from "@/public/data";
 import Pageination from "@/components/Pageination";
 
 
-export default async function Container({ endpoint, searchParams, pageUrl }) {
+export default async function Container({ endpoint, searchParams, pageUrl, method }) {
   const page = searchParams.page || 1;
-  const pageStr = `?page=${page}`
-  const data = await fetch(`${endpoint}/${pageStr}`,{cache:"no-store"}).then(res => res.json()).then(data => data)
+  const pageStr = `${method}page=${page}`
+  const data = await fetch(`${endpoint}${pageStr}`,{cache:"no-store"}).then(res => res.json()).then(data => data)
   return (
     <>
       <div className="pad min-h-[70vh] w-full flex justify-between items-center flex-wrap gap-8 ">
