@@ -1,11 +1,12 @@
+import { api } from "@/public/data";
 import Container from "@/sections/Container";
 import Search from "@/sections/Search";
 
-export default function Home() {
+export default function Home({searchParams}) {
   return (
-    <div className="h-[70vh]">
+    <div className="min-h-[70vh]">
       <Search/>
-      <Container/>
+      <Container endpoint={`${api}/games`} searchParams={searchParams} pageUrl={'/'}/>
     </div>
   );
 }
