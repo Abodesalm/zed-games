@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function Pageination({url , results}) {
   const searchParams = useSearchParams()
-  const page : number = searchParams.get('page') || 1
+  const page : number = parseInt(searchParams.get('page') || "1")
   return (
     <div className="w-[200px] h-[100px] bg-bglight dark:bg-darker flex flex-row justify-around items-center rounded-[10px] mx-auto mb-4">
       <Link className="w-[50px] h-[50px] border border-accentt rounded-[10px] font-medium flex justify-center items-center" href={`${url}?page=${page>1?+page -1:1}`}><BiArrowToLeft/></Link>
