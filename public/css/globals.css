@@ -156,6 +156,34 @@
   color: rgb(239, 68, 68);
 }
 
+.input {
+  border: 1px black solid;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.input-headings {
+  font-size: 18px !important;
+}
+
+.btn-hover {
+  font-weight: 500;
+  cursor: pointer;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  border-color: #5fbe49;
+}
+.btn-hover:hover {
+  color: black;
+  background-color: #5fbe49;
+  border-color: black;
+}
+
 @media screen and (max-width: 720px) {
   .nav-links {
     display: none;

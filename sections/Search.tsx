@@ -1,18 +1,16 @@
-"use client"
+'use client'
+
 import Link from "next/link"
 import { useState } from "react"
 
+
 export default function Search() {
-
-  const [SearchValue, setValue] = useState('')
-
+  const [url, setUrl] = useState('')
   return (
-    <div className="pad h-[100px] bg-gray-900 text-white">
-      <form method='get' action={`http://127.0.0.1:8000/api/v1/games?search=`}>
-        <input type="text" className="" name="search" id='search'/>
-        <button>submit</button>
-        <Link href={`/?search=${SearchValue}`}>Search</Link>
-      </form>
+    <div className="h-[100px] bg-bglight dark:bg-darker flex flex-row justify-center items-center gap-4">
+      <input type="search" onChange={(e)=>setUrl(e.target.value)} placeholder="Search Doesn't Work Yet" className="input w-[50%] focus-visible:outline-none placeholder:text-red-400/70"/>
+      <Link href={`/?search=${url}`} className="input btn-hover">Submit</Link>
     </div>
   )
 }
+

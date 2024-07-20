@@ -16,7 +16,7 @@ export default async function Game({params}) {
 
   return (
     <div className='pad'>
-      <GameInfo name={game.name} desc={game.desc} studio={game.studio} release={game.release} genres={game.genres} series={game.series} price={game.price} />
+      <GameInfo name={game.name} desc={game.desc} studio={game.studio} release={game.release} genres={game.genres} series={game.series} price={game.price} platforms={game.platforms} />
       <Heading title="requirements" clas="mt-4"/>
       <Requirements minCPU={req.minCPU} minGPU={req.minGPU} minRAM={req.minRAM} minVRAM={req.minVRAM} recCPU={req.recCPU} recGPU={req.recGPU} recRAM={req.recRAM} recVRAM={req.recVRAM} storage={req.storage} />
       <Heading title="my rates" clas="mt-8"/>
