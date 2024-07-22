@@ -7,9 +7,10 @@ import Pageination from "@/components/Pageination";
 
 export default async function Container({ endpoint, searchParams, pageUrl }) {
   const page = searchParams.page || 1;
-  const pageStr = `${searchParams.search?'&':'?'}page=${page}`
+  const pageStr = `${searchParams.search||searchParams.rank?'&':'?'}page=${page}`
+  const rank = `${searchParams.rank?`?rank=${searchParams.rank}`:``}`
   const searchStr = `?name={$regex:${searchParams.search},$options:i}`
-  const lastEndpoint = `${endpoint}${searchParams.search?searchStr:''}${pageStr}`
+  const lastEndpoint = `${endpoint}${searchParams.search?searchStr:''}${rank}${pageStr}`
   const data = await fetch(lastEndpoint,{cache:"no-store"}).then(res => res.json()).then(data => data).catch(err=>console.log(err))
   return (
     <>

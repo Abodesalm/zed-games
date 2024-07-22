@@ -6,6 +6,14 @@ import MyRates from "@/sections/MyRates";
 import Requirements from "@/sections/Requirements";
 import axios from "axios";
 
+
+export const metadata ={
+  title:`The Game | Zed Games`,
+  description:``,
+  keywords:['requirements', 'games', 'steam', 'download', 'reviews']
+}
+
+
 export default async function Game({params}) {
 
   const endPoint = `${api}/games/${params.gameId}`;

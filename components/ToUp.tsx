@@ -8,7 +8,7 @@ const ToUp = () => {
   const [clas, setClas] = useState('')
 
   useEffect(()=>{
-    window.onscroll = function () {this.scrollY>=700?setClas('show'):setClas('')}
+    window.onscroll = function () {this.scrollY>=500?setClas('show'):setClas('')}
   },[])
 
   const scrlTop=()=>{
@@ -19,7 +19,7 @@ const ToUp = () => {
   }
 
   return (
-    <div className={"scrollTop px-6 text-dark font-bold  " + clas} onClick={scrlTop}>للأعلى</div>
+    <div className={"scrollTop px-6 text-dark font-bold  " + clas} onClick={scrlTop}>UP</div>
   )
 }
 

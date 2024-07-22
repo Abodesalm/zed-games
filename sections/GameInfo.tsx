@@ -10,11 +10,11 @@ const pricing = (p)=>{
 
 export default function GameInfo({name, desc, studio, release, genres, series, price, platforms}) {
   return (
-    <div className="h-[340px] flex flex-row items-center gap-6">
+    <div className="min-h-[340px] flex flex-row items-center md:items-start md:mt-4 gap-6">
       <div className="">
         <div className="h-[300px] w-[200px] md:h-[225px] md:w-[150px] rounded-[10px] bg-gray-500"></div>
       </div>
-      <div className="h-[84%] flex flex-col justify-between">
+      <div className="min-h-[84%] md:space-y-2 flex flex-col justify-between">
         <div className="text-[24px] md:text-[20px]">{name}</div>
         <div className="max-h-[100px] w-[380px] md:w-[200px] p-1 text-[14px] bg-bglight dark:bg-darker rounded-[5px]">{desc}.</div>
         <div className="text-[15px] flex flex-row items-center gap-2 capitalize"> <BiDesktop className="text-accentt dark:text-accent text-[18px]"/> {studio}{!studio&&<p>unknown !</p>}</div>

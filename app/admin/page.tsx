@@ -83,10 +83,10 @@ export default function Page() {
     <>
       <form className="pad flex flex-col gap-4 text-center " onSubmit={res}>
         <p className={error==='Created !'?'text-accentt':'text-red-600'}>{error}</p>
-        <div className="flex flex-row justify-between items-start">
+        <div className="flex flex-row md:flex-col justify-between items-start">
           <div className="flex flex-col justify-center items-start gap-4">
             <Heading title='infos' clas="input-headings"/>
-            <input className="input" placeholder="Name" type="text" onChange={(e)=>setName(e.target.value)}/>
+            <input className="input" placeholder="Name" type="text" onChange={(e)=>setName(e.target.value)} required/>
             <input className="input" placeholder="Studio" type="text" onChange={(e)=>setStudio(e.target.value)}/>
             <textarea className="input" cols={34} rows={4} placeholder="Description" onChange={(e)=>setDesc(e.target.value)}/>
             <input className="input" placeholder="Series" type="text" onChange={(e)=>setSeries(e.target.value)}/>
@@ -108,7 +108,7 @@ export default function Page() {
             <input className="input w-[140px]" placeholder="rec RAM" type="number" onChange={(e)=>setRecRAM(e.target.value)}/>          
             <input className="input w-[140px]" placeholder="rec VRAM" type="number" onChange={(e)=>setRecVRAM(e.target.value)}/>    
             
-            <input className="input w-[140px] mt-4" placeholder="Storage" type="number" onChange={(e)=>setStorage(e.target.value)}/>          
+            <input className="input w-[140px] mt-4" placeholder="Storage" type="number" onChange={(e)=>setStorage(e.target.value)} required/>          
           </div>
 
           <div className="flex flex-col justify-center items-start gap-4 w-[20%]">
