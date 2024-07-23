@@ -86,7 +86,7 @@ export default function Page() {
         <div className="flex flex-row md:flex-col justify-between items-start">
           <div className="flex flex-col justify-center items-start gap-4">
             <Heading title='infos' clas="input-headings"/>
-            <input className="input" placeholder="Name" type="text" onChange={(e)=>setName(e.target.value)} required/>
+            <input className="input" placeholder="Name" minLength={2} type="text" onChange={(e)=>setName(e.target.value)} required/>
             <input className="input" placeholder="Studio" type="text" onChange={(e)=>setStudio(e.target.value)}/>
             <textarea className="input" cols={34} rows={4} placeholder="Description" onChange={(e)=>setDesc(e.target.value)}/>
             <input className="input" placeholder="Series" type="text" onChange={(e)=>setSeries(e.target.value)}/>
@@ -105,7 +105,7 @@ export default function Page() {
             
             <input className="input w-[320px] mt-4" placeholder="rec CPU" type="text" onChange={(e)=>setRecCPU(e.target.value)}/>          
             <input className="input w-[320px]" placeholder="rec GPU" type="text" onChange={(e)=>setRecGPU(e.target.value)}/>          
-            <input className="input w-[140px]" placeholder="rec RAM" type="number" onChange={(e)=>setRecRAM(e.target.value)}/>          
+            <input className="input w-[140px]" placeholder="rec RAM" type='number' onChange={(e)=>setRecRAM(e.target.value)}/>          
             <input className="input w-[140px]" placeholder="rec VRAM" type="number" onChange={(e)=>setRecVRAM(e.target.value)}/>    
             
             <input className="input w-[140px] mt-4" placeholder="Storage" type="number" onChange={(e)=>setStorage(e.target.value)} required/>          
@@ -113,10 +113,10 @@ export default function Page() {
 
           <div className="flex flex-col justify-center items-start gap-4 w-[20%]">
             <Heading title='rates' clas="input-headings"/>
-            <input className="input w-[140px]" placeholder="My Story" type="number" onChange={(e)=>setMyStory(e.target.value)}/>          
-            <input className="input w-[140px]" placeholder="My Beauty" type="number" onChange={(e)=>setMyBeauty(e.target.value)}/>          
-            <input className="input w-[140px]" placeholder="My Gameplay" type="number" onChange={(e)=>setMyGameplay(e.target.value)}/>          
-            <input className="input w-[140px]" placeholder="My Total" type="number" onChange={(e)=>setMyTotal(e.target.value)}/>          
+            <input className="input w-[140px]" min={0} max={100} placeholder="My Story" type="number" onChange={(e)=>setMyStory(e.target.value)}/>          
+            <input className="input w-[140px]" min={0} max={100} placeholder="My Beauty" type="number" onChange={(e)=>setMyBeauty(e.target.value)}/>          
+            <input className="input w-[140px]" min={0} max={100} placeholder="My Gameplay" type="number" onChange={(e)=>setMyGameplay(e.target.value)}/>          
+            <input className="input w-[140px]" min={0} max={100} placeholder="My Total" type="number" onChange={(e)=>setMyTotal(e.target.value)}/>          
             <input className="input w-[200px]" placeholder="My Review" type="text" onChange={(e)=>setMyReview(e.target.value)}/>          
             <input className="input w-[180px]" placeholder="The Rank" type="text" onChange={(e)=>setRank(e.target.value)}/>  
 

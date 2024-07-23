@@ -37,11 +37,11 @@ export default function Signup() {
       <form onSubmit={submit} className="w-[400px] min-h-[500px] px-2 py-4 bg-bglight dark:bg-darker rounded-[28px] flex flex-col justify-center items-center gap-4">
         <Heading title='sign up' />
         <p className={`${error==='Created !'?'text-accentt':'text-red-600'}  text-center`}>{error}</p>
-        <input type="text" required placeholder="Name" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setName(e.target.value)}/>
-        <input type="email" required placeholder="Email" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setEmail(e.target.value)}/>
+        <input type="text" required minLength={4} max={32} placeholder="Name" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setName(e.target.value)}/>
+        <input type="email" required  placeholder="Email" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setEmail(e.target.value)}/>
         <input type="text" placeholder="Bio" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setBio(e.target.value)} />
-        <input type="password" required placeholder="Password" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setPassword(e.target.value)}/>
-        <input type="password" required placeholder="Confirm Password" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setPassConfirm(e.target.value)}/>
+        <input type="password" required min={8} max={32} placeholder="Password" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setPassword(e.target.value)}/>
+        <input type="password" required min={8} max={32} placeholder="Confirm Password" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setPassConfirm(e.target.value)}/>
 
         <Submit title="sign up"/>
       </form>

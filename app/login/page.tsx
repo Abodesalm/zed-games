@@ -27,7 +27,7 @@ export default function Login() {
         <Heading title='log in' />
         <p className={`${error==='Loged In !'?'text-accentt':'text-red-600'}  text-center`}>{error}</p>
         <input type="email" placeholder="Email" name="email" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" name="password" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setPassword(e.target.value)} required />
+        <input type="password" min={8} max={32} placeholder="Password" name="password" className="w-[90%] rounded-[10px] p-4" onChange={(e)=>setPassword(e.target.value)} required />
         <Submit title='Log In'/>
       </form>
       <Link href="/signup" className="underline">dont have an account ? signup</Link>

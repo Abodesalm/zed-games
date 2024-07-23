@@ -6,7 +6,7 @@ import { FaWhatsapp , FaDiscord , FaInstagram , FaFacebook , FaTelegram } from "
 export default function Footer() {
   return (
     <footer className="pad min-h-[200px] bg-bglight dark:bg-darker flex flex-row md:flex-col md:gap-4 justify-between items-center">
-      <div className=" w-[14%] h-[100px] md:w-[60%] flex flex-col justify-start gap-2 md:gap-4 items-center">
+      <div className=" w-[20%] h-[100px] md:w-[60%] flex flex-col justify-start gap-2 md:gap-4 items-center">
         <Heading title="Zed Games"/>
         <div className="flex flex-row items-center justify-around w-full">
           <Link href={links.accounts.whatsapp} className="text-[20px] hover:text-accent" target="_blanc"> <FaWhatsapp/> </Link>
@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-[30%] md:self-start md:ml-8 md:mb-8 h-[100px]">
+      <div className="w-[30%] md:w-[50%] md:self-start md:ml-8 md:mb-8 h-[100px]">
         <ul className=" list-disc">
           <p className="-ml-5 text-[18px] font-medium">links</p>
           <li><Link className="hover:text-accent" href={`/`}>Home</Link></li>
