@@ -7,6 +7,10 @@ export default function Requirements({minCPU , minGPU , minRAM , minVRAM , recCP
     else if(!v) return <p className="w-full text-center inline">--</p>
     else return <p className="inline">{v}</p>
   }
+  const gbmb=(el)=>{
+    if(el > 300) return 'mb'
+    else return 'GB'
+  }
 
   return (
     <div className="">
@@ -29,17 +33,17 @@ export default function Requirements({minCPU , minGPU , minRAM , minVRAM , recCP
           </tr>
           <tr>
             <td>RAM</td>
-            <td>{unknown(minRAM)} GB</td>
-            <td>{unknown(recRAM)} GB</td>
+            <td>{unknown(minRAM)} {gbmb(minRAM)}</td>
+            <td>{unknown(recRAM)} {gbmb(recRAM)}</td>
           </tr>
           <tr>
             <td>VRAM</td>
-            <td>{unknown(minVRAM)} GB</td>
-            <td>{unknown(recVRAM)} GB</td>
+            <td>{unknown(minVRAM)} {gbmb(minVRAM)}</td>
+            <td>{unknown(recVRAM)} {gbmb(recVRAM)}</td>
           </tr>
           <tr>
             <td>Storage</td>
-            <td colSpan={2}>{unknown(storage)} GB</td>
+            <td colSpan={2}>{unknown(storage)} {gbmb(storage)}</td>
           </tr>
         </tbody>
       </table>

@@ -22,7 +22,7 @@ export default function GameInfo({name, desc, studio, release, genres, series, p
         <div className="text-[15px] flex flex-row items-center gap-2"> <BiMoney className="text-accentt dark:text-accent text-[18px]"/> {pricing(price)}</div>
         <div className="flex flex-row gap-3">{genres.map(el=>{return <Genre key={el} title={el} />})}</div>
         <div className="capitalize">{series} {series && <p className="text-[14px] inline lowercase">series.</p>}</div>
-        <div className="space-x-4">Platforms : {platforms.map(el=>{return <p className="inline" key={el}>{el}</p>})}</div>
+        <div className="space-x-4">Platforms : {platforms?platforms.map(el=>{return <p className="inline" key={el}>{el}</p>}):'unknown !'}</div>
       </div>
       
     </div>
