@@ -8,7 +8,7 @@ export default function Requirements({minCPU , minGPU , minRAM , minVRAM , recCP
     else return <p className="inline">{v}</p>
   }
   const gbmb=(el)=>{
-    if(el > 300) return 'mb'
+    if(el >= 300) return 'mb'
     else return 'GB'
   }
 
