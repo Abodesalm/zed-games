@@ -8,15 +8,15 @@ export default function Card({ name, id, photo, genres }) {
     <Link
       href={`/${id}`}
       className={
-        "w-[180px] min-h-[300px] flex flex-col justify-between items-center gap-1 text-center border-2 border-accent rounded-[20px] p-1 text-dark dark:text-white text-[12px] sm:w-[150px] sm:h-[250px] capitalize         "
+        "w-[180px] min-h-[300px] flex flex-col justify-between items-center gap-1 text-center border-2 border-accent rounded-[10px] p-1 text-dark dark:text-white text-[12px] sm:w-[150px] sm:min-h-[250px] capitalize         "
       }
     >
       <Image
         src={`${imagesAPI}/${photo}`}
         alt="game poster image"
-        width={160}
-        height={260}
-        className={`w-[160px] h-[260px] bg-gray-500 rounded-[16px]`}
+        width={170}
+        height={245}
+        className={`w-[170px] h-[245px] sm:w-[140px] sm:h-[210px] bg-gray-500 rounded-[6px]`}
       ></Image>
       <p>{name}</p>
       <div className="w-full flex flex-row justify-evenly">
@@ -25,7 +25,9 @@ export default function Card({ name, id, photo, genres }) {
             <Genre
               title={genre}
               key={genre}
-              clas={`text-[10px] rounded-[3px]`}
+              clas={`flex items-center ${
+                genre.length >= 9 ? "text-[8px]" : "text-[10px] sm:text-[9px]"
+              }`}
             />
           );
         })}

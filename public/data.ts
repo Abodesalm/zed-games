@@ -12,8 +12,22 @@ const links = {
     instagram: "https://www.instagram.com/3abod_sa",
     telegram: "https://te.me/aboud_zed",
     facebook: "https://www.facebook.com/3abod.sa/",
-    discord: "",
+    discord: "https://discord.gg",
   },
 };
+const allGenres = [
+  "action",
+  "fps",
+  "open world",
+  "battle royal",
+  "stealth",
+  "rpg",
+  "indie",
+  "platform",
+  "survival",
+  "horror",
+  "adventure",
+  "simulation",
+];
 
-export { api, imagesAPI, apiDomain, links };
+export { api, imagesAPI, apiDomain, links, allGenres };

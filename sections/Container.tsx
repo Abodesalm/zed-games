@@ -1,32 +1,61 @@
+"use client";
+
 import axios from "axios";
 import Card from "@/components/Card";
 import { api } from "@/public/data";
 import Pageination from "@/components/Pageination";
 import Search from "./Search";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default async function Container({ endpoint, searchParams, pageUrl }) {
+export default function Container({ endpoint, sp, pageUrl }) {
   // Variables
-  const page = searchParams.page ? `page=${searchParams.page}` : `page=1`;
-  const rank = searchParams.rank && `rank=${searchParams.rank}`;
-  const search = searchParams.search ? `search=${searchParams.search}` : null;
-  const genres = searchParams.genres ? `genres=${searchParams.genres}` : null;
-  const year = searchParams.year ? `release=${searchParams.year}` : null;
-  const fields = "fields=photo,name,genres,release";
-  const query = [year, genres, rank, search, page, fields].join("&");
-  const lastEndpoint = `${endpoint}?${query}`;
+  /* const page = sp.page ? `page=${sp.page}` : `page=1`;
+  const rank = sp.rank ? `rank=${sp.rank}`:'';
+  const search = sp.search ? `search=${sp.search}` : '';
+  const genres = sp.genres ? `genres=${sp.genres}` : '';
+  const year = sp.year ? `release=${sp.year}` : ''; */
 
-  // Fetch
-  const data = await fetch(lastEndpoint, { cache: "no-store" })
-    .then((res) => res.json())
-    .then((data) => data)
-    .catch((err) => console.log(err.response));
+  const [page, setPage] = useState(sp.page ? `page=${sp.page}` : `page=1`);
+  const [rank, setRank] = useState(sp.rank ? `rank=${sp.rank}` : "");
+  const [search, setSearch] = useState(sp.search ? `search=${sp.search}` : "");
+  const [year, setYear] = useState(sp.year ? `release=${sp.year}` : "");
+  const [genres, setGenres] = useState(sp.genres ? `genres=${sp.genres}` : "");
+
+  const fields = "fields=photo,name,genres,release";
+  const queryStuffs = [year, genres, rank, search, page, fields];
+  const query = queryStuffs.join("&");
+  const lastEndpoint = `${endpoint}?${query}`;
+  const router = useRouter();
+  useEffect(() => {
+    router.push(`/?${queryStuffs.slice(0, -1).join("&")}`);
+  }, [query]);
+
+  //Fetch
+  const [data, setData] = useState({});
+  useEffect(() => {
+    async function fetchData() {
+      let theData = await fetch(lastEndpoint, { cache: "no-store" })
+        .then((theData) => theData.json())
+        .catch((err) => console.error(err));
+      setData(theData);
+    }
+    fetchData();
+  }, [lastEndpoint]);
+
   // Render
   return (
     <>
-      <Search />
+      <Search
+        setSearchStr={setSearch}
+        setRankStr={setRank}
+        setYearStr={setYear}
+        setGenresStr={setGenres}
+        sp={sp}
+      />
       <div className="pad min-h-[70vh] w-full flex justify-between items-center flex-wrap gap-8 ">
-        {data.data ? (
-          data.data.data.map((game) => {
+        {data.data &&
+          data.data?.data.map((game) => {
             return (
               <Card
                 name={game.name}
@@ -36,12 +65,17 @@ export default async function Container({ endpoint, searchParams, pageUrl }) {
                 key={game.id}
               />
             );
-          })
-        ) : (
-          <p>No Results Found!</p>
-        )}
+          })}
       </div>
-      <Pageination url={pageUrl} results={data.results} />
+      <Pageination
+        setPageStr={setPage}
+        page={sp.page ? sp.page : 1}
+        results={data.results}
+        s={search}
+        r={rank}
+        g={genres}
+        y={year}
+      />
     </>
   );
 }
