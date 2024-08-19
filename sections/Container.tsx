@@ -32,7 +32,10 @@ export default function Container({ endpoint, sp, pageUrl }) {
   }, [query]);
 
   //Fetch
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    data: { data: [{ name: "", genres: [], photo: "", id: "" }] },
+    results: 0,
+  });
   useEffect(() => {
     async function fetchData() {
       let theData = await fetch(lastEndpoint, { cache: "no-store" })
