@@ -51,7 +51,6 @@ export default function Container({ endpoint, sp, pageUrl }) {
         setRankStr={setRank}
         setYearStr={setYear}
         setGenresStr={setGenres}
-        sp={sp}
       />
       <div className="pad min-h-[70vh] w-full flex justify-between items-center flex-wrap gap-8 ">
         {data.data &&
