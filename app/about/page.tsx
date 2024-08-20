@@ -1,5 +1,11 @@
 import Heading from "@/components/Heading";
 
+export const metadata = {
+  title: `About Zed Games`,
+  description: ``,
+  keywords: ["requirements", "games", "steam", "download", "reviews"],
+};
+
 export default function About() {
   return (
     <div className="pad min-h-[60vh]">

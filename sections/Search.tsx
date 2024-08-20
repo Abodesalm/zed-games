@@ -127,25 +127,25 @@ export default function Search({
               num={1}
               selNum={selectedRank}
               set={setSelectedRank}
-              name={`diamond`}
+              name={`Diamond`}
             />
             <Radio
               num={2}
               selNum={selectedRank}
               set={setSelectedRank}
-              name={`gold`}
+              name={`Gold`}
             />
             <Radio
               num={3}
               selNum={selectedRank}
               set={setSelectedRank}
-              name={`silver`}
+              name={`Silver`}
             />
             <Radio
               num={0}
               selNum={selectedRank}
               set={setSelectedRank}
-              name={`all`}
+              name={`All`}
             />
           </div>
         </div>

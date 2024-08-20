@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <div className="pad py-[20px_!important] bg-bglight dark:bg-darker border-b border-dark dark:border-transparent text-accenttt dark:text-accent flex justify-between items-center select-none">
       <div className="text-[20px] font-medium">Zed Games</div>
-      <div className="flex gap-10">
+      <div className="flex gap-10 sm:gap-6">
         <ThemeSwitch />
         <Link href="/" className="md:hidden flex">
           Home

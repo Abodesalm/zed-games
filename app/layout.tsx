@@ -6,7 +6,7 @@ import ToUp from "@/components/ToUp";
 import Providers from "./Providers";
 
 export const metadata: Metadata = {
-  title: "Zed Games , find any game you want",
+  title: "Zed Games | find any game you want",
   description: "",
 };
 
@@ -17,16 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body>
         <Providers>
-          <Navbar/>
+          <Navbar />
           {children}
-          <Footer/>
-          <ToUp/>
+          <Footer />
+          <ToUp />
         </Providers>
-        
       </body>
     </html>
   );
 }
-

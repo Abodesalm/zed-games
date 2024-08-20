@@ -1,8 +1,7 @@
 "use client";
 import axios from "axios";
-import Container from "@/sections/Container";
 import { api } from "@/public/data";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Heading from "@/components/Heading";
 
 export default function Page() {
@@ -32,7 +31,7 @@ export default function Page() {
   const [recVRAM, setRecVRAM] = useState<Number | String>();
   const [storage, setStorage] = useState<Number | String>();
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState<ReactNode>();
 
   const data = {
     name: name,
@@ -65,6 +64,7 @@ export default function Page() {
   };
 
   const res = (e) => {
+    setError(<div className="loader text-accent"></div>);
     e.preventDefault();
     axios
       .post(`${api}/games`, data)

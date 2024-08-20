@@ -3,7 +3,6 @@ import { api } from "@/public/data";
 import GameInfo from "@/sections/GameInfo";
 import MyRates from "@/sections/MyRates";
 import Requirements from "@/sections/Requirements";
-import axios from "axios";
 
 export const metadata = {
   title: `The Game | Zed Games`,
@@ -13,7 +12,7 @@ export const metadata = {
 
 export default async function Game({ params }) {
   const endPoint = `${api}/games/${params.gameId}`;
-  const game = await fetch(endPoint)
+  const game = await fetch(endPoint, { next: { revalidate: 1000 } })
     .then((res) => res.json())
     .then((data) => data.data.data);
   const req = game.requirements;

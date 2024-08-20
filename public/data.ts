@@ -1,5 +1,5 @@
-const apiDomain = "https://zed-games-api.onrender.com";
-//const apiDomain = "http://127.0.0.1:8000";
+//const apiDomain = "https://zed-games-api.onrender.com";
+const apiDomain = "http://127.0.0.1:8000";
 //https://zed-games-api.onrender.com
 //http://127.0.0.1:8000
 
@@ -28,6 +28,11 @@ const allGenres = [
   "horror",
   "adventure",
   "simulation",
+  "puzzle",
+  "multiplayer",
+  "singleplayer",
+  "strategy",
+  "sport",
 ];
 
 export { api, imagesAPI, apiDomain, links, allGenres };
