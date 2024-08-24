@@ -77,11 +77,11 @@ export default function Search({
       </div>
       <div
         className={`${
-          show ? "h-[140px]" : "h-[0]"
-        } overflow-hidden w-full transition-all flex flex-row items-center justify-evenly gap-2`}
+          show ? "min-h-[140px]" : "h-[0]"
+        } overflow-hidden w-full transition-all flex flex-row items-center justify-evenly gap-2 flex-wrap`}
       >
         {/* Genres */}
-        <div className={`w-[60%] h-[80%]`}>
+        <div className={`w-[60%] sm:w-[94%] h-[80%]`}>
           <p className="text-[18px] sm:text-[15px]">Genres</p>
           <div className="w-full flex flex-row flex-wrap gap-4 sm:gap-2">
             {allGenres.map((el) => {
@@ -120,7 +120,7 @@ export default function Search({
         </div>
 
         {/* Rank  */}
-        <div className={`w-[20%] sm:w-[50%] h-[80%]`}>
+        <div className={`w-[20%] sm:w-[30%] h-[80%]`}>
           <p className="text-[18px]  sm:text-[15px]">Rank</p>
           <div className="px-4 w-full">
             <Radio

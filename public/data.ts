@@ -20,8 +20,8 @@ const allGenres = [
   "fps",
   "open world",
   "battle royal",
-  "stealth",
   "rpg",
+  "stealth",
   "indie",
   "platform",
   "survival",
@@ -32,7 +32,13 @@ const allGenres = [
   "multiplayer",
   "singleplayer",
   "strategy",
-  "sport",
+  "sports",
+  "racing",
+  "casual",
+  "fighting",
+  "cards",
+  "hack & slash",
+  "family-friendly",
 ];
 
 export { api, imagesAPI, apiDomain, links, allGenres };

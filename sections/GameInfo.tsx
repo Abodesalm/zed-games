@@ -28,6 +28,7 @@ export default function GameInfo({
           alt="game poster image"
           width={200}
           height={300}
+          loading="eager"
           className="h-[300px] w-[200px] md:h-[225px] md:w-[150px] rounded-[10px] bg-gray-500"
         ></Image>
       </div>

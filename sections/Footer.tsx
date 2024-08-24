@@ -1,6 +1,6 @@
 import Heading from "@/components/Heading";
 import Link from "next/link";
-import { links } from "@/public/data";
+import { api, links } from "@/public/data";
 import {
   FaWhatsapp,
   FaDiscord,
@@ -9,7 +9,11 @@ import {
   FaTelegram,
 } from "react-icons/fa6";
 
-export default function Footer() {
+export default async function Footer() {
+  const count = await fetch(`${api}/games/games-count`, { cache: "no-store" })
+    .then((count) => count.json())
+    .then((count) => count.data);
+
   return (
     <footer className="pad min-h-[200px] bg-bglight dark:bg-darker flex flex-row md:flex-col md:gap-4 justify-between items-center">
       <div className=" w-[20%] h-[100px] md:w-[60%] flex flex-col justify-start gap-2 md:gap-4 items-center">
@@ -58,7 +62,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-[30%] md:w-[50%] md:self-start md:ml-8 md:mb-8 h-[100px]">
+      <div className="w-[40%] md:w-[50%] md:self-start md:ml-8 md:mb-8 h-[100px]">
         <ul className=" list-disc">
           <p className="-ml-5 text-[18px] font-medium">links</p>
           <li>
@@ -83,9 +87,9 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      {/*       <div className="w-[30%] h-[100px] bg-cyan-300">
-
-      </div> */}
+      <div className="w-[20%] h-[100px] md:w-[90%]">
+        there are <span className="text-accent">{count}</span> games
+      </div>
     </footer>
   );
 }

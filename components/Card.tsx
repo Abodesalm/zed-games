@@ -16,11 +16,12 @@ export default function Card({ name, id, photo, genres }) {
         alt="game poster image"
         width={170}
         height={245}
+        loading="eager"
         className={`w-[170px] h-[245px] sm:w-[140px] sm:h-[210px] bg-gray-500 rounded-[6px]`}
       ></Image>
       <p>{name}</p>
       <div className="w-full flex flex-row justify-evenly">
-        {genres.slice(0, 4).map((genre) => {
+        {genres.slice(0, 3).map((genre) => {
           return (
             <Genre
               title={genre}

@@ -18,6 +18,7 @@ export default function Pageination({ results, setPageStr, page, s, r, g, y }) {
     <div className="w-[240px] h-[100px] bg-bglight dark:bg-darker flex flex-row justify-evenly items-center rounded-[10px] mx-auto mb-4">
       <button
         className="w-[50px] h-[50px] input btn-hover"
+        id="previous"
         onClick={() => {
           page > 1 ? setPagee(+page - 1) : setPagee(1);
         }}
@@ -29,6 +30,7 @@ export default function Pageination({ results, setPageStr, page, s, r, g, y }) {
       </div>
       <button
         className="w-[50px] h-[50px] input btn-hover"
+        id="next"
         onClick={() => {
           results === 14 ? setPagee(+page + 1) : setPagee(page);
         }}

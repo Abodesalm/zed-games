@@ -183,6 +183,10 @@ $accenttt: #4f9a3f;
 .btn {
   @apply bg-accent py-1 px-2 rounded-[5px] text-dark font-bold;
 }
+img {
+  width: auto;
+  height: auto;
+}
 
 @media screen and (max-width: 720px) {
   .nav-links {
