@@ -77,11 +77,11 @@ export default function Search({
       </div>
       <div
         className={`${
-          show ? "min-h-[140px]" : "h-[0]"
+          show ? "h-[140px] md:h-[230px]" : "h-[0]"
         } overflow-hidden w-full transition-all flex flex-row items-center justify-evenly gap-2 flex-wrap`}
       >
         {/* Genres */}
-        <div className={`w-[60%] sm:w-[94%] h-[80%]`}>
+        <div className={`w-[60%] sm:w-[94%] h-[80%] md:h-[fit-content]`}>
           <p className="text-[18px] sm:text-[15px]">Genres</p>
           <div className="w-full flex flex-row flex-wrap gap-4 sm:gap-2">
             {allGenres.map((el) => {

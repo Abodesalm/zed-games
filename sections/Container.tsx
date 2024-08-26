@@ -57,7 +57,7 @@ export default function Container({ endpoint, sp, pageUrl }) {
         setYearStr={setYear}
         setGenresStr={setGenres}
       />
-      <div className="pad min-h-[70vh] w-full flex justify-between items-center flex-wrap gap-8 ">
+      <div className="pad min-h-[70vh] w-full flex justify-between items-center md:justify-around flex-wrap gap-8 ">
         {data?.data ? (
           data?.data.data.map((game) => {
             return (

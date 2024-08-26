@@ -11,12 +11,12 @@
 
 ::-moz-selection {
   background-color: #6ee154;
-  color: #212121;
+  color: #282828;
 }
 
 ::selection {
   background-color: #6ee154;
-  color: #212121;
+  color: #282828;
 }
 
 .pad {
